@@ -106,8 +106,9 @@ class UrbanSimScenarioLoader(
 
     val (mergedPlans, plansMerged) = previousRunPlanMerger.map(_.merge(inputPlans)).getOrElse(inputPlans -> false)
 
-    HOVModeTransformer.reseedRandomGenerator(beamScenario.beamConfig.matsim.modules.global.randomSeed)
-    val plans = HOVModeTransformer.transformHOVtoHOVCARorHOVTeleportation(mergedPlans, persons, households)
+//    HOVModeTransformer.reseedRandomGenerator(beamScenario.beamConfig.matsim.modules.global.randomSeed)
+//    val plans = HOVModeTransformer.transformHOVtoHOVCARorHOVTeleportation(mergedPlans, persons, households)
+    val plans = mergedPlans
 
     val householdIds = households.map(_.householdId.id).toSet
 
